@@ -24,7 +24,7 @@ Chrome akan membuka halaman pendamping. Pilih petugas, periksa maksimal 10 usaha
 - **Sesuai (#0)** mempertahankan KBLI sebelumnya dan menulis remark `#0` pada 13.g.
 - **Ubah data (#1–#4)** memakai KBLI target yang dipilih dan menulis nomor remark yang sama pada 13.g.
 - Bila kode target tersedia pada rekomendasi FASIH, pilihan itu digunakan. Bila tidak, sistem memilih **Pilih dari Master KBLI**.
-- Khusus petugas **Naflah**, tombol **Mulai otomatis Sesuai (#0)** memproses seluruh antrean secara berurutan. Setelah satu usaha berhasil diverifikasi dan slot baru muncul, usaha berikutnya langsung diproses dengan `#0`. Proses otomatis berhenti jika antrean habis, tombol dihentikan, atau satu usaha gagal.
+- Khusus petugas **Naflah**, tombol **Mulai otomatis Sesuai (#0)** memproses seluruh antrean secara berurutan. Setelah satu usaha berhasil diverifikasi dan slot baru muncul, usaha berikutnya langsung diproses dengan `#0`. Proses otomatis berhenti jika antrean habis, tombol dihentikan, atau satu usaha gagal. Setiap usaha memakai penanda permintaan unik pada URL agar Chrome selalu memuat dokumen FASIH baru dan ekstensi menerima `requestId` terbaru, termasuk ketika assignment yang sama sudah terbuka.
 
 Status di kolom B baru ditulis setelah perubahan FASIH tersimpan, proses kirim selesai, dan hasilnya diverifikasi. Penulisan dilakukan satu per satu dan identitas nama usaha pada nomor baris diperiksa ulang sebelum file diubah.
 
