@@ -1,0 +1,8 @@
+{
+  "dataFile": "../Data.xlsx",
+  "dataSheet": "Hasil",
+  "masterFile": "../Daftar_Lengkap_KBLI_2025.xlsx",
+  "masterSheet": "KBLI 2025",
+  "port": 0,
+  "visibleBusinessLimit": 10
+}
