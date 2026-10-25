@@ -1,0 +1,14 @@
+{
+  "name": "fasih-kbli-automation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pendamping pemeriksaan dan perbaikan KBLI rincian 13.g FASIH dari Excel lokal.",
+  "scripts": {
+    "manual-assist": "node src/index.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
