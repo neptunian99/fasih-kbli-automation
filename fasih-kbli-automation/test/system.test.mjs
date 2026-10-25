@@ -4,7 +4,7 @@ import path from "node:path";
 import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 import { loadMaster, loadQueue } from "../src/data.mjs";
-import { assignVisibleSlots, pageHtml } from "../src/manual-assist.mjs";
+import { assignVisibleSlots, isNaflahOwner, pageHtml, shouldReuseAutomationTab } from "../src/manual-assist.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 test("membaca data dan master aktual", async () => {
@@ -23,4 +23,14 @@ test("skrip halaman pendamping valid", () => {
   assert.doesNotThrow(() => new vm.Script(script));
   assert.match(script, /keepExisting=status==='#0'/);
   assert.match(script, /keepExistingKbli:keepExisting/);
+  assert.match(script, /Mulai otomatis Sesuai \(#0\)/);
+  assert.match(script, /autoMode:options\.autoMode===true/);
+});
+test("tombol otomatis hanya berlaku untuk pemeriksa Naflah", () => {
+  assert.equal(isNaflahOwner("Naflah"), true);
+  assert.equal(isNaflahOwner("  NAFLAH "), true);
+  assert.equal(isNaflahOwner("Dayat"), false);
+  assert.equal(shouldReuseAutomationTab({ autoMode: true, status: "#0", owner: "Naflah" }), true);
+  assert.equal(shouldReuseAutomationTab({ autoMode: true, status: "#1", owner: "Naflah" }), false);
+  assert.equal(shouldReuseAutomationTab({ autoMode: true, status: "#0", owner: "Dayat" }), false);
 });
