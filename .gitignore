@@ -1,0 +1,11 @@
+# Data operasional dan master referensi tidak disimpan di GitHub.
+*.xlsx
+*.xls
+
+# Dependensi dan artefak lokal.
+node_modules/
+*.tmp-*
+*.log
+.DS_Store
+.env
+
