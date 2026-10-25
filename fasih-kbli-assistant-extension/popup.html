@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pendamping KBLI FASIH</title>
+  <style>
+    body{font:14px system-ui,sans-serif;width:380px;margin:0;padding:16px;color:#17202a;background:#f6f7f9}
+    h1{font-size:18px;margin:0 0 8px}h1 small{font-size:11px;color:#64748b;font-weight:650}p{line-height:1.35;color:#5f6975;margin:8px 0 12px}
+    textarea{box-sizing:border-box;width:100%;min-height:150px;resize:vertical;border:1px solid #cfd5dc;border-radius:8px;padding:10px;font:12px ui-monospace,monospace;background:#fff}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}button{border:0;border-radius:8px;padding:9px 12px;font-weight:650;cursor:pointer;background:#e7ebef;color:#17202a}button.primary{background:#f97316;color:#fff}button.safe{background:#1d4ed8;color:#fff}
+    #status{white-space:pre-wrap;min-height:34px;margin-top:12px;padding:9px;border-radius:8px;background:#fff;border:1px solid #dfe3e8;font-size:12px}
+    .warning{color:#9a3412;font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>Pendamping KBLI FASIH <small>v0.1.16</small></h1>
+  <p>Ekstensi ini bekerja otomatis dari halaman Pendamping Pemeriksaan KBLI. Input manual di bawah hanya untuk diagnosis.</p>
+  <textarea id="payload" placeholder='{"kind":"kbli","businessName":"...","targetCode":"47112","remark":"#1"}'></textarea>
+  <div class="actions">
+    <button id="scan">Periksa halaman</button>
+    <button id="fillRemark" class="safe">Pilih KBLI + remark + Kirim</button>
+  </div>
+  <p class="warning">Perubahan hanya dilakukan pada rincian 13.g. Status Excel baru ditulis setelah nilai tersimpan dan approval berhasil diverifikasi.</p>
+  <div id="status">Siap.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
