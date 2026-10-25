@@ -25,6 +25,7 @@ test("skrip halaman pendamping valid", () => {
   assert.match(script, /keepExistingKbli:keepExisting/);
   assert.match(script, /Mulai otomatis Sesuai \(#0\)/);
   assert.match(script, /autoMode:options\.autoMode===true/);
+  assert.match(script, /url\.searchParams\.set\('fasihKbliRequest',requestId\)/);
 });
 test("tombol otomatis hanya berlaku untuk pemeriksa Naflah", () => {
   assert.equal(isNaflahOwner("Naflah"), true);
