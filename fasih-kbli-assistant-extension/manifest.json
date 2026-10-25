@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Pendamping KBLI FASIH",
+  "version": "0.1.16",
+  "description": "Memilih KBLI rincian 13.g, menulis remark, mengirim, memverifikasi hasil, lalu mengonfirmasi assignment.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://fasih-sm.bps.go.id/app/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "action": {
+    "default_title": "Pendamping DOM FASIH",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://fasih-sm.bps.go.id/app/*"],
+      "js": ["bootstrap.js"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://fasih-sm.bps.go.id/app/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
